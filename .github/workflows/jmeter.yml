@@ -13,7 +13,7 @@ jobs:
         uses: ./
         with:
           test-plan-path: ./jmeter/tests/soitec.jmx
-          args: ""
+          args: "-E"
           
       - name: Upload Results
         uses: actions/upload-artifact@v2
