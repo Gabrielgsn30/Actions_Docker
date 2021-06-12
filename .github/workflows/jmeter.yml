@@ -11,5 +11,5 @@ jobs:
       - name: JMeter Test
         uses: QAInsights/PerfAction@v1.0
         with:
-          test-plan-path: .jmeter/tests/soitec.jmx
+          test-plan-path: ./.jmeter/tests/soitec.jmx
           args: "-l"
