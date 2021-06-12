@@ -1,21 +1,22 @@
 name: Test JMeter Action
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 jobs:
-  action_build:
+  jmeter_job:
     runs-on: ubuntu-latest
-    steps:
-      - name: JMeter Test
+    name: JMeter Execution
+    steps:      
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Run JMeter Tests
         uses: ./
         with:
           test-plan-path: ./jmeter/tests/soitec.jmx
           args: ""
           
       - name: Upload Results
-        uses: ./
+        uses: actions/upload-artifact@v2
         with:
           name: jmeter-results
           path: result.jtl
