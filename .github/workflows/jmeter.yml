@@ -9,11 +9,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
-      - name: Run JMeter Tests
-        uses: ./
+      - name: JMeter Test
+        uses: QAInsights/PerfAction@v1.0
         with:
           test-plan-path: ./jmeter/tests/soitec.jmx
-          args: "-E"
+          args: ""
           
       - name: Upload Results
         uses: actions/upload-artifact@v2
