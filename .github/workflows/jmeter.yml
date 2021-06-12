@@ -1,0 +1,24 @@
+name: Test JMeter Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  action_build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run JMeter Action
+        uses: ./
+        with:
+          testFilePath: .jmeter/tests/soitec.jmx
+          outputReportsFolder: .jmeter/reports/
+          args: "--loglevel INFO"
+
+      - uses: actions/upload-artifact@v1
+        with:
+          name: jmeter-test-results
+          path: .jmeter/reports/
