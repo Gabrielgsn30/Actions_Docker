@@ -15,7 +15,7 @@ jobs:
           args: ""
           
       - name: Upload Results
-        uses: actions/upload-artifact@v2
+        uses: ./
         with:
           name: jmeter-results
           path: result.jtl
