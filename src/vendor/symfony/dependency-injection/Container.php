@@ -64,7 +64,7 @@ class Container implements ContainerInterface, ResetInterface
 
     public function __construct(ParameterBagInterface $parameterBag = null)
     {
-        $this->parameterBag = $parameterBag ?: new EnvPlaceholderParameterBag();
+        $this->parameterBag = $parameterBag ?? new EnvPlaceholderParameterBag();
     }
 
     /**
@@ -109,7 +109,7 @@ class Container implements ContainerInterface, ResetInterface
      *
      * @param string $name The parameter name
      *
-     * @return mixed The parameter value
+     * @return array|bool|float|int|string|null The parameter value
      *
      * @throws InvalidArgumentException if the parameter is not defined
      */
@@ -192,7 +192,7 @@ class Container implements ContainerInterface, ResetInterface
      *
      * @return bool true if the service is defined, false otherwise
      */
-    public function has($id)
+    public function has(string $id)
     {
         if (isset($this->aliases[$id])) {
             $id = $this->aliases[$id];
@@ -221,7 +221,7 @@ class Container implements ContainerInterface, ResetInterface
      *
      * @see Reference
      */
-    public function get($id, int $invalidBehavior = /* self::EXCEPTION_ON_INVALID_REFERENCE */ 1)
+    public function get(string $id, int $invalidBehavior = /* self::EXCEPTION_ON_INVALID_REFERENCE */ 1)
     {
         return $this->services[$id]
             ?? $this->services[$id = $this->aliases[$id] ?? $id]
