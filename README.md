@@ -1,4 +1,4 @@
-# cursoactions
+# Actions_Docker
 Repositorio contem projeto em php, que foi dockerizado e utilizando as actions é enviado para AWS.
 
 Projeto php clonado de [Semaphore](https://github.com/TomFern/semaphore-demo-php-unsplash)
