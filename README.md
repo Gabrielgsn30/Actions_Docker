@@ -8,7 +8,7 @@ Adicionado actions para construir a imagem e atualizar ela no DockerHub.
 Adicionado actions para realizar o CI/CD no ambiente AWS.
 E por fim adicionado action para realizar o teste de carga no projeto.
 
-****Algumas issues abertas, projeto em desenvolvimento.
+****Algumas issues abertas, projeto em desenvolvimento.....
 
 Para acesso do projeto colocar na URL do nvagador o IP 54.218.93.13
 O projeto faz o deploy na AWS apenas quando tem novas releases
